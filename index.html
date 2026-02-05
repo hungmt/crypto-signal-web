@@ -37,5 +37,16 @@
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function () {
+    OneSignal.init({
+      appId: "75d863af-e24a-4852-bf25-92fa3fc8ae94",
+      notifyButton: { enable: true },
+      allowLocalhostAsSecureOrigin: true,
+    });
+  });
+</script>
 </body>
 </html>
