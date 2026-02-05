@@ -39,20 +39,17 @@
   OneSignalDeferred.push(async function(OneSignal) {
     await OneSignal.init({
       appId: "75d863af-e24a-4852-bf25-92fa3fc8ae94",
+      serviceWorkerPath: "/OneSignalSDKWorker.js",
+      serviceWorkerUpdaterPath: "/OneSignalSDKUpdaterWorker.js",
+      serviceWorkerParam: { scope: "/onesignal/" },   // QUAN TRỌNG
     });
   });
 </script>
+
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
- <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/OneSignalSDKWorker.js')
-      .then(function(reg) {
-        console.log('OneSignal Service Worker registered', reg);
-      });
-  }
-</script>
+
 
 </body>
 </html>
